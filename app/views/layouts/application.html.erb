@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simopost</title>
+  <title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
+  
+  <!-- si occupa di chiamare stylesheet e javascript-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <!-- previene attacchi maliziosi -->
   <%= csrf_meta_tags %>
+
+
 </head>
 <body>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
