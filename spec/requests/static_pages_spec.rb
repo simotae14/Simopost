@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
+  # DEFINIRE UN ELEMENTO COMUNE
+  # USO FUNZIONE let
+  let(:base_title) { "Ruby on Rails Tutorial Sample App" }
+
   # CREO TEST PER LA HOME PAGE
   describe "Home page" do
 
@@ -35,7 +39,7 @@ describe "StaticPages" do
   		# che la pagina risultante ha il tag con il
       # giusto contenuto
   		page.should have_selector('title',
-        :text => "Ruby on Rails Tutorial Sample App | Home")
+        :text => "#{base_title} | Home")
   	end
   end
 
@@ -73,7 +77,7 @@ describe "StaticPages" do
       # che la pagina risultante ha il tag con il
       # giusto contenuto
       page.should have_selector('title',
-        :text => "Ruby on Rails Tutorial Sample App | Help")
+        :text => "#{base_title} | Help")
     end
   end
 
@@ -110,8 +114,46 @@ describe "StaticPages" do
       # che la pagina risultante ha il tag con il
       # giusto contenuto
       page.should have_selector('title',
-        :text => "Ruby on Rails Tutorial Sample App | About Us")
+        :text => "#{base_title} | About Us")
     end
   end
+
+  # CREO TEST PER LA CONTACT PAGE
+  describe "Contact page" do
+
+    # IL TITOLO DELLA CONTACT
+    # Previsione dovrebbe contenere
+    # la giusta intestazione
+    it "should have the h1 'Contact'" do
+      # controllo visitando la pagina
+      # il metodo have_selector controlla che
+      # il contenuto del TAG h1 sia quello
+      # riferito dalla key :text
+      visit '/static_pages/contact'
+
+      page.should have_selector('h1',
+        :text => 'Contact')
+    end 
+
+
+    # QUANDO VISITI LA CONTACT
+    # previsione comportamento desiderato
+    # dovrebbe contenere titolo 'Contact'
+    it "should have the title 'Contact'" do
+      
+
+      # controlliamo visitando la pagina, URI
+      # CAPYBARA simula la visita dell'URI
+      visit '/static_pages/contact'
+      
+      # TEST
+      # usa la var page, data da Capybara, per testare
+      # che la pagina risultante ha il tag con il
+      # giusto contenuto
+      page.should have_selector('title',
+        :text => "#{base_title} | Contact")
+    end
+  end
+
 
 end

@@ -8,4 +8,8 @@ class StaticPagesController < ApplicationController
   # INTRODUCO AZIONE ABOUT
   def about
   end
+
+  # INTRODUCO AZIONE CONTACT
+  def contact
+  end
 end
