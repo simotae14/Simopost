@@ -1,5 +1,6 @@
 Simopost::Application.routes.draw do
-  
+  # usato per generare le corrispondenze fra le
+  # URI e le corrispettive pagine web
   get "static_pages/home"
 
   get "static_pages/help"
@@ -7,6 +8,7 @@ Simopost::Application.routes.draw do
   get "static_pages/about"
 
   get "static_pages/contact"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

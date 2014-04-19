@@ -9,7 +9,7 @@ gem 'rails', '3.2.3'
 group :development, :test do
   gem 'sqlite3', '1.3.9'
 
-  # GEM per il testing
+  # GEM per il testing in dev
   gem 'rspec-rails', '2.9.0'
 
 end
@@ -31,7 +31,8 @@ end
 gem 'jquery-rails', '2.0.1'
 
 
-# aggiungo gem in test ambiente
+# aggiungo gem in test ambiente, essa simula l'interazione
+# fra utente e app usando sintassi in ling naturale
 group :test do
   gem 'capybara', '1.1.2'
 end
