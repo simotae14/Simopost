@@ -1,0 +1,136 @@
+// CSS personalizzato per uso bootstrap
+// importo bootstrap, con questa istruzione includo
+// l'intero framework di bootstrap
+
+// Aggiungiamo delle regole universali a tutte 
+//le pagine
+
+@import "bootstrap";
+
+// overflow-y indica cosa fare coi bordi superiore e inferiore
+// del contenuto dell'elemento
+// lo scroll indica che il contenuto viene ritagliato
+// e viene previsto un meccanismo di scrolling
+
+/* definisco i mixins, le variabili personalizzate etc.. */
+$grayMediumLight: #eaeaea;
+
+/* universal */
+
+
+html {
+	overflow-y: scroll;
+}
+
+// indica distanza da bordo superirore e contenuto
+// distanzia la scritta Welcome to dall'header
+body {
+	padding-top: 60px;
+}
+
+// definisce un meccanismo di ritaglio con uno scrolling
+// se il contenuto della sezione straborda
+section {
+	overflow: auto;
+}
+
+// l'area di testo viene ridimensionata verticalmente
+textarea {
+	resize: vertical;
+}
+
+// alllinea centralmente tutto il testo
+.center {
+	text-align: center;
+	// crea un margine inferiore dei testi h1
+	h1 {
+		margin-bottom: 10px;
+	}
+}
+
+// aggiungo delle regole riguardanti formattazione
+// testo per ottenere estetica soddisfacente
+
+/* typography */
+
+// specifico altezza riga, la ridimensiono e rendo a 1
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+}
+
+// setto alcune caratteristiche di h1, em è un valore scalabile
+// 1 em == 12 pt == 16px == 100%
+h1 {
+	font-size: 3em;
+	letter-spacing: -2px; // valore fisso spazio fra lettere 
+	margin-bottom: 30px; // margine dal fondo, messo sotto bottone signup
+	text-align: center; // allineamento testo
+}
+
+h2 {
+	font-size: 1.7em; // dimensione font
+	letter-spacing: -1px; // spazio fra lettere
+	margin-bottom: 30px; // margine inferiore sopra bottone signup
+	text-align: center; // allineamento testo
+	font-weight: normal; // spessore caratteri, tipo bold
+	color: $grayLight; // colore font
+}
+
+p {
+	font-size: 1.1em;
+	line-height: 1.7em; // altezza riga
+}
+
+// aggiungiamo stile per il logo cioè scritta
+// Sample App nel amrgine superiore sinistro
+
+/* header */
+
+// usiamo id poichè ci si aspetta che il logo compaia una sola
+// volta nella pagina, altrimenti era meglio usare una classe
+#logo {
+	float: left;
+	margin-right: 10px;
+	font-size: 1.7em;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding-top: 9px;
+	font-weight: bold;
+	line-height: 1;
+	// innestiamo #logo:hover
+	&:hover {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+// aggiungiamo dello stile per il footer
+
+/* footer */
+
+footer {
+	margin-top: 45px; // distanza alto
+	padding-top: 5px; // distanza contenuto da margine
+	border-top: 1px solid $grayMediumLight; // creo bordo grigio sopra il footer
+	color: $grayLight; // var sass per grigio chiaro
+	/* link footer */
+	a {
+		color: $gray;
+		/* footer a:hover */
+		&:hover {
+			color: $grayDarker;
+		}
+	}
+	small {
+		float: left;
+	}
+	ul {
+		float: right;
+		list-style: none;
+		li {
+			float: left;
+			margin-left: 10px;
+		}
+	}
+}

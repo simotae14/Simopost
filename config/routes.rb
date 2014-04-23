@@ -1,13 +1,30 @@
 Simopost::Application.routes.draw do
+  get "users/new"
+
+  root to: 'static_pages#home'
+  # ci da i seguenti helper URI
+  # root_path => '/'
+  # root_url => 'http://localhost:3000/'
   # usato per generare le corrispondenze fra le
   # URI e le corrispettive pagine web
-  get "static_pages/home"
+  #get "static_pages/home"
+  # creo le named route
+  
+  # creo la route per signup
+  match '/signup', to: 'users#new'
 
-  get "static_pages/help"
 
-  get "static_pages/about"
+  match '/help', to: 'static_pages#help'
+  #get "static_pages/help"
+  # tale codice in auto crea le route nominate cioè
+  # help_path => '/about'
+  # help_url => 'http://localhost:3000/about'
 
-  get "static_pages/contact"
+  match '/about', to: 'static_pages#about'
+  #get "static_pages/about"
+
+  match '/contact', to: 'static_pages#contact'
+  #get "static_pages/contact"
 
 
   # The priority is based upon order of creation:

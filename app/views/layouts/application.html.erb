@@ -1,16 +1,24 @@
+<!-- Aggiunti partials per header e shim -->
 <!DOCTYPE html>
 <html>
   <head>
     <!-- Richiamo metodo helper per il titolo -->
     <title><%= full_title(yield(:title)) %></title>
-    <!-- si occupa di chiamare stylesheet e javascript-->
-    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <!-- si occupa di chiamare stylesheet e javascript, uso notazioen hash ruby 1.9.3-->
+    <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <!-- previene attacchi maliziosi -->
     <%= csrf_meta_tags %>
+    <!-- reference a partials dello shim -->
+    <%= render 'layouts/shim' %>    
   </head>
   <body>
+    <!-- aggiungo reference partial header -->
+    <%= render 'layouts/header' %>
     <!-- istruzione che esegue ed incorpora nell'html il risutlato dell'invocazione dello yield nella pagina relativa -->
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
