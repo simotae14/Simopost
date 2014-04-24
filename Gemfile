@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 
 # AGGIUNGO LA GEMMA DI BOOTSTRAP SASS
-gem 'bootstrap-sass', '2.0.0'
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'sprockets', '2.11.0'
 
 # Aggiungo gemma bcrypt per creare hash che cripta una password
 gem 'bcrypt-ruby', '3.0.1'

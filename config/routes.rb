@@ -11,19 +11,19 @@ Simopost::Application.routes.draw do
   # creo le named route
   
   # creo la route per signup
-  match '/signup', to: 'users#new'
+  match '/signup', to: 'users#new', via: 'get'
 
 
-  match '/help', to: 'static_pages#help'
+  match '/help', to: 'static_pages#help', via: 'get'
   #get "static_pages/help"
   # tale codice in auto crea le route nominate cioè
   # help_path => '/about'
   # help_url => 'http://localhost:3000/about'
 
-  match '/about', to: 'static_pages#about'
+  match '/about', to: 'static_pages#about', via: 'get'
   #get "static_pages/about"
 
-  match '/contact', to: 'static_pages#contact'
+  match '/contact', to: 'static_pages#contact', via: 'get'
   #get "static_pages/contact"
 
 
