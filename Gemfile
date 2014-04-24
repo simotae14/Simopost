@@ -5,6 +5,9 @@ gem 'rails', '3.2.3'
 # AGGIUNGO LA GEMMA DI BOOTSTRAP SASS
 gem 'bootstrap-sass', '2.0.0'
 
+# Aggiungo gemma bcrypt per creare hash che cripta una password
+gem 'bcrypt-ruby', '3.0.1'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -14,6 +17,8 @@ group :development, :test do
 
   # GEM per il testing in dev
   gem 'rspec-rails', '2.9.0'
+  # aggiungo gemma per commenti
+  gem 'annotate', '~> 2.4.1.beta'
 
 end
 
